@@ -1,0 +1,89 @@
+/*------------DASHBOARD-PAGE STARTS------------*/
+@import "../style.scss";
+
+.dashboard-wrapper{
+	padding: 35px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	.filter-wrapper{
+		display: flex;
+		flex-direction: row;
+		.filter-by-text{
+			font-weight: bold;
+			font-size: 18px;
+			margin-top: 7px;
+		}
+		.filter-wrapper{
+			margin-left: 10px;
+			background: $filter-btn-color;
+			border-color: $filter-btn-color;
+			.filter-btn {
+				background: transparent;
+				border: none;
+				font-weight: bold;
+				font-size: $dashboard-header-font-size;
+				outline: none;
+				padding-right: 90px;
+			}
+			.down-arrow{
+				padding-top: 5px;
+			}
+			.dropdown-menu{
+				width: 100%;
+				text-align: left;
+			}
+		}
+	}
+	.data-wrapper{
+		display: flex;
+		flex-direction: column;
+		margin-top: 30px;
+		width: 100%;
+		@include main-border-style($main-border-width,solid,$border-color);
+		ul.data-header{
+			@include bottom-border-style($main-border-width,solid,$border-color);
+			padding: 3px 0;
+			li{
+				.data-header-separator{
+					height: 24px;
+					margin-left: auto;
+					@include main-border-style(2px,solid,$border-color);
+				}
+			}
+		}
+		.data-content-wrapper{
+			max-height: 500px;
+			overflow: auto;
+			ul.data-content{
+				padding: 15px 0;
+			}
+		}
+		.table-row {
+			width: 100%;
+			display: flex;
+			list-style: none;
+			@include bottom-border-style(2px,solid,$border-color);
+			margin: 0;
+			.table-row-item {
+				display: flex;
+				flex-grow: 1;
+				flex-basis: 0;
+				word-break: break-word;
+				flex-wrap: wrap;
+				padding-left: 25px;
+			}
+			.title-data-content{
+				flex-grow: 2;
+			}
+		}
+		.table-row {
+			&:last-child {
+				@include bottom-border-style(0px,solid,$border-color);
+			}
+		}
+	}
+}
+
+/*------------DASHBOARD-PAGE ENDS------------*/
