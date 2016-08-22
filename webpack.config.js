@@ -1,13 +1,17 @@
-/**
- * Created by rvishwa on 03-08-2016.
- */
+var path = require('path');
+
 module.exports = {
-    entry: './src/app.js',
+    context: path.resolve('./src/client/app/'),
+    entry: './app.js',
     output: {
         filename: 'bundle.js',
-        path: './dist'
+        path: path.resolve('build/js/'),
+        publicPath: '/src/client/app/',
     },
-	module: {
+    devServer: {
+        contentBase: './src/client'
+    },
+    module: {
         preLoaders: [
             {
                 test: /\.js$/,
@@ -15,16 +19,19 @@ module.exports = {
                 exclude: /node_modules/
             }
         ],
-		loaders: [{
-			test: /\.js$/,
-			loader: 'babel',
-			exclude: /node_modules/
-		},
-			{
-				test: /\.scss$/,
-				loader: 'style-loader!css-loader!resolve-url-loader!sass-loader',
-				exclude: /node_modules/
-			}
-		]
+        loaders: [{
+            test: /\.js$/,
+            loader: 'babel',
+            exclude: /node_modules/
+        },
+            {
+                test: /\.scss$/,
+                loader: 'style-loader!css-loader!resolve-url-loader!sass-loader',
+                exclude: /node_modules/
+            }
+        ]
+    },
+    resolve: {
+        extensions: ['', '.js', '.es6']
     }
 };
