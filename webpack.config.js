@@ -1,17 +1,17 @@
 var path = require('path');
 
 module.exports = {
-    context: path.resolve('./src/client/app/'),
-    entry: './app.js',
-    output: {
-        filename: 'bundle.js',
-        path: path.resolve('build/js/'),
-        publicPath: '/src/client/app/',
-    },
-    devServer: {
-        contentBase: './src/client'
-    },
-    module: {
+  context: path.resolve('./src/client/app/'),
+  entry: './app.js',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve('build/js/'),
+    publicPath: '/src/client/app/',
+  },
+  devServer: {
+    contentBase: './src/client'
+  },
+  module: {
         preLoaders: [
             {
                 test: /\.js$/,
@@ -30,8 +30,5 @@ module.exports = {
                 exclude: /node_modules/
             }
         ]
-    },
-    resolve: {
-        extensions: ['', '.js', '.es6']
     }
 };
