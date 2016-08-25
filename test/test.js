@@ -2,7 +2,7 @@
 'use strict';
 
 var request = require("supertest"),
-    app = require("../src/server/app").getApp;
+    app = require("../src/server/app.js").getApp;
 
 describe('GET /', function(){
   it('expects HTTP response 200', function(done){

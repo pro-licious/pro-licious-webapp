@@ -5,6 +5,7 @@ var app = express();
 
 app.set('view', 'view');
 app.get('/', function (req, res) {
+  res.send('success');
   console.log('Gotcha success !');
 });
 
