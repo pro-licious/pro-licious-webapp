@@ -1,11 +1,12 @@
 {
-  "name": "Pro-licious-webapp",
+  "name": "pro-licious-webapp",
   "version": "1.0.0",
   "description": "Pro-licious webapp",
   "main": "./server/app.js",
   "scripts": {
     "start": "webpack-dev-server --inline --port 8080",
-    "build": "webpack -p"
+    "build": "webpack -p",
+    "serve": "node ./src/server/app.js"
   },
   "repository": {
     "type": "git",
