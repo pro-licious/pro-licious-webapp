@@ -1,7 +1,7 @@
 /* eslint-disable */
 (function() {
 	'use strict';
-	var port = process.env.PORT || 5000;
+	var port = process.env.PORT || 3000;
 	var environment = process.env.NODE_ENV;
 	var express = require('express'),
 		app = express();
