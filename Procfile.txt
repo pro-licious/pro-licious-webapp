@@ -1,1 +1,3 @@
-web: npm start # Tells Heroku what command to use to run your app.
+#web: npm start # Tells Heroku what command to use to run your app.
+
+web: cd /src && node ./src/server/app.js
